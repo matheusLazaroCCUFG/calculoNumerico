@@ -1,12 +1,12 @@
 # calculoNumerico
 
 # Universidade Federal de Goiás
-# Instituto de Informática - Ciência da Computação - fevereiro de 2021
+# Instituto de Informática - Ciência da Computação - Semestre letivo 2020.2 
 # Aluno: Matheus Lázaro Honório da Silva - 201801523
 # Disciplina: Cálculo Numérico
+
 # Método da Bissecção utilizando Python
 
-'''
     Teoria sobre o método da Bissecção
         * Livro Neide - Cap 3. Equações não lineares
 
@@ -29,9 +29,9 @@
                 é repetido com [x1, b]
         A repetição do método é chamado ITERAÇÃO e as aproximações
         sucessivas são os termos iterados.
-'''
+
     
-* Método do ponto fixo
+# Método do ponto fixo
 Descrição 2 do método do ponto fixo
 
             * É um método para encontrar a raiz real de uma equação

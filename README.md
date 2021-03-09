@@ -32,7 +32,7 @@
 
     
 # Método do ponto fixo
-Descrição 2 do método do ponto fixo
+Descrição do método do ponto fixo
 
             * É um método para encontrar a raiz real de uma equação
             não linear por aproximação sucessiva

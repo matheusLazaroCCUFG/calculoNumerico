@@ -35,26 +35,24 @@
         A repetição do método é chamado ITERAÇÃO e as aproximações
         sucessivas são os termos iterados.
 '''
-
 # Exemplo de função em que a solução é determinada usando
 # o método da bissecção
 import math
-e = 2.71828182846 # constante de Euler
 
 def funcao(x):
-      return ((((x+1)** 2) * (math.exp (((x** 2) - 2))))- 1) ## Exemplo do livro - 64
-    # return math.sqrt(x) - math.cos(x)
-      
-    # return (x** 3) - 5*x - 9
+    return (math.exp(-x**2) - math.cos(x))
 
 def metodoBisseccao(a, b):
     if(funcao(a) * funcao(b) >= 0):
         print("A condição f(a) * f(b) < 0 deve ser verdadeira!\n")
         return
-
-    i = 1
+    maxIteracoes = 14
+    i = 0
     c = a
-    while((b - a) >= 0.00001):  # 0.00001: Erro tolerável
+    erro = 0.000061035
+    while((b - a) >= erro):  # Erro tolerável
+        # if(i == maxIteracoes + 1): # não converge
+          #  break
         c = (a + b)/2 # Ponto médio
 
         if(funcao(c) == 0.0): # Verificar se o ponto médio é raiz
@@ -65,21 +63,16 @@ def metodoBisseccao(a, b):
         else:
             a = c
 
-        print("iter: ", "%d"%i)
-        print("a = ", "%d"%a)
-        print("b = ", "%d"%b)
-        print("xk = ", "%.5f"%c)
-        print("f(xk) = ", "%.5f"%(funcao(c)))
-        print("--------------------")
         i = i + 1
 
-    print("Valor da raiz: ", "%.5f"%c)
+    print("===========================")
+    print("Valor da raiz: x = ", "%.8f"%c)
+    print("f(x) = ", "%.9f"%(funcao(c)))
+    print("Erro em x = ", "%.9f" %erro)
+    print("Número de Iterações = ", "%d" %(i-1))
 
 # Principal / Main
-## Exemplo do livro - 64
-a = 0
-b = 1
+a = 1
+b = 2
 
-# a = 2
-# b = 3
 metodoBisseccao(a, b) 
